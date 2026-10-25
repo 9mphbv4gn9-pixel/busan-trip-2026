@@ -330,7 +330,7 @@ footer{text-align:center;font-size:13px;color:var(--ink-soft)}
   <h2 class="sec-title" style="margin-top:18px"><svg width="32" height="32" viewBox="0 0 34 34" aria-hidden="true"><rect x="7" y="4" width="20" height="22" rx="6" fill="#B9DAA5" stroke="#3E3A39" stroke-width="2.5"/><path d="M7 16h20M11 31l3-5M23 31l-3-5" stroke="#3E3A39" stroke-width="2.5" stroke-linecap="round"/><circle cx="12" cy="21" r="1.6" fill="#3E3A39"/><circle cx="22" cy="21" r="1.6" fill="#3E3A39"/></svg>交通・地圖</h2>
   <div class="card" style="display:grid;gap:10px">
     <h3 style="font-size:18px">釜山地鐵景點地圖</h3>
-    <img class="shot" src="a/metro_map.jpg" alt="釜山地鐵景點地圖" data-zoom="釜山地鐵景點地圖" loading="lazy">
+    <img class="shot" src="metro_map.jpg" alt="釜山地鐵景點地圖" data-zoom="釜山地鐵景點地圖" loading="lazy">
     <p class="muted" style="margin:0">地圖來源：波比看世界 bobbyfun.tw（家人行程參考用）</p>
   </div>
   <div class="card" style="display:grid;gap:10px">
@@ -530,9 +530,9 @@ footer{text-align:center;font-size:13px;color:var(--ink-soft)}
     if (it.fareNote) body += `<div class="note">💳 ${esc(it.fareNote)}</div>`;
     if (it.ko){ const di = DRIVERS.push({ to: it.to || it.title, ko: it.ko }) - 1;
       body += `<div class="btns"><button class="btn" type="button" data-di="${di}">給司機看</button><a class="btn alt" target="_blank" rel="noopener" href="${naver(it.ko.split("\n").pop())}">Naver 地圖</a></div>`; }
-    if (it.map) body += `<img class="shot" loading="lazy" src="a/${it.map}.jpg" alt="${esc(it.title)} 地鐵路線圖" data-zoom="${esc(it.title)}">
-      <img class="shot" loading="lazy" src="a/${it.strip}.png" alt="${esc(it.title)} 逐站圖" data-zoom="${esc(it.title)}（逐站）">`;
-    if (it.shot) body += `<img class="shot" loading="lazy" src="a/${it.shot}.jpg" alt="${esc(it.title)} Naver 路線截圖" data-zoom="${esc(it.title)}">`;
+    if (it.map) body += `<img class="shot" loading="lazy" src="${it.map}.jpg" alt="${esc(it.title)} 地鐵路線圖" data-zoom="${esc(it.title)}">
+      <img class="shot" loading="lazy" src="${it.strip}.png" alt="${esc(it.title)} 逐站圖" data-zoom="${esc(it.title)}（逐站）">`;
+    if (it.shot) body += `<img class="shot" loading="lazy" src="${it.shot}.jpg" alt="${esc(it.title)} Naver 路線截圖" data-zoom="${esc(it.title)}">`;
     const has = body.length > 0;
     return `<details class="leg" id="${id}"${has ? "" : " data-empty"}><summary>
       <span class="mode ${cls}">${label}</span><span class="lt">${it.backup ? '<span class="backup-label">備案</span> ' : ""}${esc(it.title.replace(/^備案：/,""))}</span>
@@ -543,9 +543,9 @@ footer{text-align:center;font-size:13px;color:var(--ink-soft)}
     const vis = p.hours[wd] || p.hours.find(Boolean) || "";
     const uniq = new Set(p.hours.filter(Boolean)).size;
     const week = uniq > 1 || p.hours.length ? `<table>${[1,2,3,4,5,6,0].map(i => `<tr class="${i===wd?"vis":""}"><td>週${WD[i]}</td><td>${esc(p.hours[i]||"—")}</td></tr>`).join("")}</table>` : "";
-    const photo = p.photo ? `<img class="ph" loading="lazy" src="a/${p.photo}.jpg" alt="${esc(p.zh)}" data-zoom="${esc(p.zh)}">` : "";
+    const photo = p.photo ? `<img class="ph" loading="lazy" src="${p.photo}.jpg" alt="${esc(p.zh)}" data-zoom="${esc(p.zh)}">` : "";
     const q = cleanAddr(p.addr);
-    const extra = it.extraImg ? `<div class="extra-img"><img class="shot" loading="lazy" src="a/${it.extraImg.src}.jpg" alt="${esc(it.extraImg.title)}" data-zoom="${esc(it.extraImg.title)}"><div class="muted" style="margin-top:4px">${esc(it.extraImg.title)}（來源：波比看世界）</div></div>` : "";
+    const extra = it.extraImg ? `<div class="extra-img"><img class="shot" loading="lazy" src="${it.extraImg.src}.jpg" alt="${esc(it.extraImg.title)}" data-zoom="${esc(it.extraImg.title)}"><div class="muted" style="margin-top:4px">${esc(it.extraImg.title)}（來源：波比看世界）</div></div>` : "";
     const links = it.key === "airport" ? "" : `<div class="btns">
         ${p.addr && p.type!=="home" ? `<button class="btn" type="button" data-dko="${esc(p.ko)}\n${esc(q)}" data-dto="${esc(p.zh)}">給司機看</button>` : ""}
         <a class="btn alt" target="_blank" rel="noopener" href="${naver(p.ko.split(" · ")[0] || q)}">Naver 地圖</a>
