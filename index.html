@@ -1,0 +1,729 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style></head><body>
+<title>釜山煙火之旅</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Huninn&display=swap">
+<style>
+/* 繪本風單欄：紙白底、墨灰粗框、大圓角、平塗四色，手機優先 */
+:root{
+  --paper:#FFFCF6; --card:#FFFFFF; --ink:#3E3A39; --ink-soft:#6B6563; --line-c:#3E3A39;
+  --coral:#F2A497; --yellow:#F6D27A; --mizu:#A8D3E6; --bamboo:#B9DAA5; --lav:#CDBFE3;
+  --coral-l:#FCE3DE; --yellow-l:#FCF0CC; --mizu-l:#E2F1F7; --bamboo-l:#E7F2DF; --lav-l:#EEE8F6;
+  --metro:#2E9E3E; --taxi:#E0A800; --bus:#2A86C8;
+  --r-lg:24px; --r-md:16px; --r-pill:999px;
+  --font:"Huninn","PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:120px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 60px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--paper)}
+h1,h2,h3,h4{font-weight:400;margin:0;text-wrap:balance;line-height:1.3}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px dashed var(--ink);outline-offset:3px}
+.wrap{max-width:680px;margin:0 auto;display:flex;flex-direction:column;gap:22px}
+.muted{color:var(--ink-soft);font-size:14px}
+.ln{border:3px solid var(--line-c)}
+.card{border:3px solid var(--line-c);border-radius:var(--r-lg);background:var(--card);padding:18px;min-width:0}
+.card > *{min-width:0}
+.sec-title{display:flex;align-items:center;gap:10px;font-size:23px;margin:6px 0 2px}
+.sec-title svg{flex:none}
+.pill{display:inline-flex;align-items:center;gap:4px;font-size:12.5px;border:2px solid var(--line-c);border-radius:var(--r-pill);padding:0 9px;line-height:1.7;white-space:nowrap;background:var(--card)}
+.btn{display:inline-flex;align-items:center;gap:6px;cursor:pointer;text-decoration:none;border:3px solid var(--line-c);border-radius:var(--r-pill);padding:5px 14px;font-size:14.5px;background:var(--yellow);line-height:1.4}
+.btn.alt{background:var(--mizu)} .btn.g{background:var(--bamboo)} .btn.w{background:var(--card)} .btn.c{background:var(--coral)}
+.btn:active{transform:translateY(2px)}
+.btns{display:flex;flex-wrap:wrap;gap:8px}
+
+/* ---- 上方選單＋現在列 ---- */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px)));
+  background:var(--paper);border-bottom:3px solid var(--line-c)}
+.nav{list-style:none;margin:0 auto;padding:10px max(16px,env(safe-area-inset-right,0px)) 10px max(16px,env(safe-area-inset-left,0px));max-width:712px;display:flex;gap:7px;overflow-x:auto;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{display:block;white-space:nowrap;text-decoration:none;padding:5px 13px;border:3px solid var(--line-c);border-radius:var(--r-pill);font-size:15px;background:var(--card)}
+.nav a[aria-current="page"]{background:var(--yellow)}
+.nowbar{display:none;border-top:3px solid var(--line-c);background:var(--coral-l);padding:8px max(16px,env(safe-area-inset-right,0px)) 8px max(16px,env(safe-area-inset-left,0px))}
+.nowbar.on{display:block}
+.nowbar-in{max-width:680px;margin:0 auto;display:flex;align-items:center;gap:10px}
+.nowbar-txt{flex:1;min-width:0;font-size:14px;line-height:1.45}
+.nowbar-txt b{font-weight:400;background:var(--coral);border:2px solid var(--line-c);border-radius:var(--r-pill);padding:0 7px;font-size:12px;margin-right:4px}
+.nowbar-txt div{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* ---- 首頁 ---- */
+.hero{margin-top:18px;padding:0;overflow:hidden}
+.hero svg.scene{display:block;width:100%;height:auto;border-bottom:3px solid var(--line-c)}
+.hero-body{padding:16px 18px 20px;display:flex;flex-direction:column;gap:10px}
+.eyebrow{align-self:flex-start;background:var(--coral);border:3px solid var(--line-c);border-radius:var(--r-pill);padding:1px 12px;font-size:14px;letter-spacing:.06em}
+.hero h1{font-size:clamp(30px,8vw,42px)}
+.hero p{margin:0}
+.count{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.count div{border:3px solid var(--line-c);border-radius:var(--r-md);text-align:center;padding:6px 4px;background:var(--mizu-l)}
+.count div:nth-child(2){background:var(--yellow-l)}.count div:nth-child(3){background:var(--bamboo-l)}.count div:nth-child(4){background:var(--coral-l)}
+.count b{display:block;font-weight:400;font-size:27px;font-variant-numeric:tabular-nums;line-height:1.2}
+.count span{font-size:13px}
+.flights{display:grid;gap:12px}
+.flight{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;border:3px solid var(--line-c);border-radius:var(--r-md);padding:12px 14px}
+.flight.go{background:var(--mizu-l)}.flight.back{background:var(--bamboo-l)}
+.flight .head{grid-column:1/-1;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-size:14px}
+.flight .end{min-width:0}.flight .end.r{text-align:right}
+.flight .t{font-size:27px;font-variant-numeric:tabular-nums;line-height:1.2}
+.flight .code{font-size:12.5px;color:var(--ink-soft)}
+.flight svg{width:56px;height:26px}
+dl.kv{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 12px}
+dl.kv dt{font-size:13.5px;color:var(--ink-soft);white-space:nowrap}
+dl.kv dd{margin:0;min-width:0;overflow-wrap:anywhere}
+.ko{font-size:17px}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:8px;counter-reset:s}
+.steps li{display:grid;grid-template-columns:62px minmax(0,1fr);gap:10px;align-items:start;border:3px solid var(--line-c);border-radius:var(--r-md);padding:8px 12px;background:var(--card)}
+.steps li .tm{font-variant-numeric:tabular-nums;font-size:15px}
+.steps li small{display:block;color:var(--ink-soft);font-size:13px}
+.flow-tabs{display:flex;gap:8px;margin-bottom:10px}
+
+/* ---- 行程 ---- */
+.tabs{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px}
+.tab{background:var(--card);border:3px solid var(--line-c);border-radius:var(--r-md);padding:5px 2px;cursor:pointer;line-height:1.25;display:flex;flex-direction:column;align-items:center}
+.tab small{font-size:11.5px}
+.tab b{font-weight:400;font-size:16.5px;font-variant-numeric:tabular-nums}
+.tab[aria-selected="true"]{background:var(--yellow);transform:translateY(-3px);box-shadow:0 3px 0 var(--line-c)}
+.tab .today{font-size:10.5px;background:var(--coral);border-radius:var(--r-pill);padding:0 5px;margin-top:1px}
+.day-head{display:flex;gap:12px;align-items:center}
+.day-head svg{flex:none;width:58px;height:58px}
+.day-head h3{font-size:21px}
+.rain{border:3px dashed var(--line-c);border-radius:var(--r-md);background:var(--mizu-l);margin-top:12px}
+.rain summary{cursor:pointer;padding:8px 14px;list-style:none;display:flex;align-items:center;gap:8px}
+.rain summary::-webkit-details-marker{display:none}
+.rain ul{margin:0;padding:0 14px 12px 32px;display:grid;gap:6px;font-size:14.5px}
+.timeline{list-style:none;margin:16px 0 0;padding:0;position:relative}
+.timeline::before{content:"";position:absolute;left:55px;top:6px;bottom:6px;border-left:3px dashed var(--line-c);opacity:.3}
+.it{display:grid;grid-template-columns:44px 22px minmax(0,1fr);gap:0 8px;padding-bottom:12px;position:relative}
+.it .tm{font-size:14.5px;font-variant-numeric:tabular-nums;padding-top:7px;text-align:right}
+.it .dot{width:18px;height:18px;border:3px solid var(--line-c);border-radius:50%;background:var(--card);margin-top:9px;position:relative;z-index:1}
+.it.it-stop .dot{background:var(--yellow)} .it.it-stop.star .dot{background:var(--coral)}
+.it.it-leg .dot{width:12px;height:12px;margin:12px 0 0 3px;border-width:2px}
+.it.backup{opacity:.92}
+.it.now .dot{background:var(--coral);box-shadow:0 0 0 5px var(--coral-l)}
+.nowtag{display:inline-block;font-size:11.5px;background:var(--coral);border:2px solid var(--line-c);border-radius:var(--r-pill);padding:0 7px;margin-left:6px;vertical-align:2px}
+.nexttag{display:inline-block;font-size:11.5px;background:var(--bamboo);border:2px solid var(--line-c);border-radius:var(--r-pill);padding:0 7px;margin-left:6px;vertical-align:2px}
+
+/* 事件 */
+.ev{border:3px solid var(--line-c);border-radius:var(--r-md);padding:8px 12px;background:var(--card)}
+.ev .t1{font-size:16px}
+.ev .t2{font-size:13.5px;color:var(--ink-soft)}
+
+/* 交通段 */
+.leg{border:2px solid var(--line-c);border-radius:var(--r-md);background:var(--paper)}
+.leg > summary{cursor:pointer;list-style:none;padding:7px 10px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.leg > summary::-webkit-details-marker{display:none}
+.leg .mode{font-size:12.5px;border:2px solid var(--line-c);border-radius:var(--r-pill);padding:0 9px;line-height:1.7;white-space:nowrap}
+.m-metro{background:var(--bamboo)} .m-taxi{background:var(--yellow)} .m-walk{background:var(--card)} .m-bus{background:var(--mizu)} .m-train{background:var(--lav)} .m-cable{background:var(--coral)}
+.leg .lt{flex:1 1 160px;min-width:0;font-size:14.5px}
+.leg .lm{font-size:13px;color:var(--ink-soft);white-space:nowrap}
+.leg .chev{transition:transform .2s;flex:none}
+.leg[open] .chev{transform:rotate(180deg)}
+.leg-body{padding:0 10px 12px;display:grid;gap:10px}
+.leg-body .note{font-size:14px;background:var(--card);border:2px solid var(--line-c);border-radius:12px;padding:6px 10px}
+.shot{display:block;width:100%;border:2px solid var(--line-c);border-radius:12px;cursor:zoom-in;background:#fff}
+.backup-label{font-size:12px;border:2px dashed var(--line-c);border-radius:var(--r-pill);padding:0 8px}
+
+/* 店家卡 */
+.place{border:3px solid var(--line-c);border-radius:var(--r-md);background:var(--card);overflow:hidden}
+.place.star{background:var(--coral-l)}
+.place.home{background:var(--bamboo-l)}
+.place-top{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;padding:12px}
+.place-top.nophoto{grid-template-columns:minmax(0,1fr)}
+.place img.ph{width:84px;height:84px;object-fit:cover;border-radius:12px;border:2px solid var(--line-c);cursor:zoom-in}
+.place h4{font-size:17px}
+.place .kor{font-size:13.5px;color:var(--ink-soft)}
+.place .row{font-size:14px;margin-top:3px}
+.place .row b{font-weight:400;color:var(--ink-soft);margin-right:4px}
+.star-badge{font-size:12px;background:var(--coral);border:2px solid var(--line-c);border-radius:var(--r-pill);padding:0 8px;margin-left:4px;vertical-align:2px;white-space:nowrap}
+.place .tip{font-size:14px;padding:0 12px 10px}
+.place .btns{padding:0 12px 12px}
+.hours{margin:0 12px 10px;border:2px solid var(--line-c);border-radius:12px;background:var(--paper)}
+.hours summary{cursor:pointer;list-style:none;padding:6px 10px;font-size:14px;display:flex;gap:6px;align-items:center}
+.hours summary::-webkit-details-marker{display:none}
+.hours table{width:100%;border-collapse:collapse;font-size:13.5px;margin:0 0 6px}
+.hours td{padding:3px 10px;border-top:1px dashed #0002}
+.hours tr.vis td{background:var(--yellow-l)}
+.extra-img{margin:0 12px 12px}
+
+/* ---- 票券 ---- */
+.tk{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 10px;border:3px solid var(--line-c);border-radius:var(--r-md);padding:10px 12px;background:var(--card)}
+.tk.pre{background:var(--coral-l)}
+.tk .nm{font-size:16px}
+.tk .sm{font-size:13px;color:var(--ink-soft);grid-column:1/-1}
+.tk .amt{text-align:right;font-variant-numeric:tabular-nums;font-size:15px;white-space:nowrap}
+.sum{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.sum div{border:3px solid var(--line-c);border-radius:var(--r-md);padding:10px;text-align:center;background:var(--yellow-l)}
+.sum div:nth-child(2){background:var(--bamboo-l)} .sum div:nth-child(3){background:var(--mizu-l)} .sum div:nth-child(4){background:var(--coral-l)}
+.sum b{display:block;font-weight:400;font-size:21px;font-variant-numeric:tabular-nums}
+.sum span{font-size:13px}
+.list{display:grid;gap:10px}
+.tw{font-size:12.5px;color:var(--ink-soft)}
+
+/* ---- 換算 ---- */
+.conv{display:grid;gap:10px}
+.conv label{font-size:14px;color:var(--ink-soft)}
+.conv input{font:inherit;font-size:22px;width:100%;border:3px solid var(--line-c);border-radius:var(--r-md);padding:6px 12px;background:var(--card);color:var(--ink);font-variant-numeric:tabular-nums}
+.conv .out{font-size:30px;font-variant-numeric:tabular-nums}
+.quick{display:flex;flex-wrap:wrap;gap:6px}
+
+/* ---- 實用 ---- */
+.phr{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.phr button{text-align:left;cursor:pointer;border:3px solid var(--line-c);border-radius:var(--r-md);padding:8px 10px;background:var(--card);display:flex;flex-direction:column;gap:2px}
+.phr button small{color:var(--ink-soft);font-size:12.5px}
+.phr button span{font-size:16.5px}
+.driver-list{display:grid;gap:8px}
+.driver-list button{cursor:pointer;text-align:left;border:3px solid var(--line-c);border-radius:var(--r-md);background:var(--yellow-l);padding:8px 12px}
+.driver-list small{display:block;color:var(--ink-soft);font-size:12.5px}
+.em{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.em div{border:3px solid var(--line-c);border-radius:var(--r-md);padding:8px;text-align:center;background:var(--card)}
+.em b{display:block;font-weight:400;font-size:26px}
+.todos{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.todo label{display:grid;grid-template-columns:28px minmax(0,1fr);gap:10px;align-items:start;border:3px solid var(--line-c);border-radius:var(--r-md);padding:9px 12px;cursor:pointer;background:var(--card)}
+.todo.hot label{background:var(--coral-l)}
+.todo input{appearance:none;width:24px;height:24px;border:3px solid var(--line-c);border-radius:7px;margin:0;cursor:pointer;background:var(--card);display:grid;place-content:center}
+.todo input::after{content:"";width:11px;height:6px;border-left:3px solid var(--ink);border-bottom:3px solid var(--ink);transform:rotate(-45deg) translate(1px,-2px) scale(0);transition:transform .2s}
+.todo input:checked{background:var(--bamboo)}
+.todo input:checked::after{transform:rotate(-45deg) translate(1px,-2px) scale(1)}
+.todo input:checked + span{text-decoration:line-through;color:var(--ink-soft)}
+.todo span small{display:block;font-size:13px;color:var(--ink-soft)}
+.bar{flex:1 1 140px;height:14px;border:3px solid var(--line-c);border-radius:var(--r-pill);overflow:hidden;background:var(--card)}
+.bar i{display:block;height:100%;width:0;background:var(--bamboo);transition:width .4s}
+.tbl-wrap{overflow-x:auto}
+.tbl{border-collapse:collapse;font-size:13.5px;width:100%}
+.tbl th{white-space:nowrap}
+.tbl td:first-child{white-space:nowrap}
+.tbl th,.tbl td{border:2px solid var(--line-c);padding:5px 8px;text-align:left}
+.tbl th{background:var(--yellow-l);font-weight:400}
+
+/* ---- 全螢幕卡 ---- */
+.overlay{position:fixed;inset:0;z-index:50;background:var(--paper);display:flex;flex-direction:column;
+  padding:calc(16px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) calc(16px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.overlay[hidden]{display:none!important}
+.ov-bar{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.ov-body{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;gap:16px;text-align:center;overflow:auto}
+.ov-big{font-size:clamp(30px,9vw,60px);line-height:1.3;overflow-wrap:anywhere;white-space:pre-line}
+.ov-sub{font-size:clamp(18px,5vw,26px);color:var(--ink-soft)}
+.ov-please{font-size:clamp(22px,6vw,34px);background:var(--yellow);border:3px solid var(--line-c);border-radius:var(--r-lg);padding:8px 14px;align-self:center}
+.ov-img{flex:1;min-height:0;overflow:auto;-webkit-overflow-scrolling:touch;border:3px solid var(--line-c);border-radius:var(--r-md);background:#fff}
+.ov-img img{display:block;width:100%;max-width:none}
+.ov-img.zoom img{width:220%}
+
+.panel-anim{animation:pop .45s cubic-bezier(.28,1.6,.5,1)}
+@keyframes pop{0%{transform:translateY(10px);opacity:.5}100%{transform:none;opacity:1}}
+.float{animation:float 4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.burst{animation:burst 2.6s ease-out infinite;transform-box:fill-box;transform-origin:center}
+.burst.b2{animation-delay:.9s}.burst.b3{animation-delay:1.7s}
+.wave{animation:wave 5s ease-in-out infinite}
+.slide{animation:slide 9s ease-in-out infinite alternate}
+@keyframes float{50%{transform:translateY(-4px)}}
+@keyframes burst{0%{transform:scale(.4);opacity:0}25%{opacity:1}70%{transform:scale(1);opacity:1}100%{transform:scale(1.05);opacity:0}}
+@keyframes wave{50%{transform:translateX(-12px)}}
+@keyframes slide{to{transform:translateX(60px)}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}.burst{opacity:1}}
+section[hidden]{display:none!important}
+footer{text-align:center;font-size:13px;color:var(--ink-soft)}
+</style>
+
+<header class="top">
+  <nav aria-label="頁面選單"><ul class="nav" id="nav">
+    <li><a href="#home" data-v="home">首頁</a></li>
+    <li><a href="#plan" data-v="plan">每日行程</a></li>
+    <li><a href="#transit" data-v="transit">交通・地圖</a></li>
+    <li><a href="#info" data-v="info">實用</a></li>
+  </ul></nav>
+  <div class="nowbar" id="nowbar">
+    <div class="nowbar-in">
+      <div class="nowbar-txt"><div id="now-a"></div><div id="now-b"></div></div>
+      <button class="btn c" type="button" id="now-go">看行程</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+<!-- ================= 首頁 ================= -->
+<section id="v-home" data-view="home">
+  <div class="card hero">
+    <svg class="scene" viewBox="0 0 360 200" role="img" aria-label="廣安大橋上空的煙火、海面與海岸列車插圖">
+      <g stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+        <circle cx="46" cy="42" r="17" fill="#F6D27A"/>
+        <g class="burst" fill="none"><g stroke="#F2A497"><path d="M262 50v-18M262 50v18M262 50h-18M262 50h18M262 50l-13-13M262 50l13 13M262 50l13-13M262 50l-13 13"/></g></g>
+        <g class="burst b2" fill="none"><g stroke="#A8D3E6"><path d="M310 76v-14M310 76v14M310 76h-14M310 76h14M310 76l-10-10M310 76l10 10M310 76l10-10M310 76l-10 10"/></g></g>
+        <g class="burst b3" fill="none"><g stroke="#B9DAA5"><path d="M206 38v-12M206 38v12M206 38h-12M206 38h12M206 38l-8-8M206 38l8 8M206 38l8-8M206 38l-8 8"/></g></g>
+        <path d="M-4 144 Q40 98 86 120 Q120 92 160 144 Z" fill="#B9DAA5"/>
+        <path d="M14 142 Q62 122 106 88 Q180 144 254 88 Q298 122 346 142" fill="none"/>
+        <path d="M128 106v36M150 119v23M172 127v15M196 127v15M218 119v23M238 106v36" fill="none" stroke-width="2"/>
+        <rect x="100" y="80" width="12" height="74" rx="3" fill="#FFFCF6"/>
+        <rect x="248" y="80" width="12" height="74" rx="3" fill="#FFFCF6"/>
+        <rect x="6" y="140" width="348" height="9" rx="4" fill="#F2A497"/>
+        <rect x="-4" y="154" width="368" height="50" fill="#A8D3E6" stroke="none"/>
+        <g class="wave"><path d="M-4 156 q10 -6 20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0" fill="none"/></g>
+        <path d="M30 180 q8 -5 16 0 M180 190 q8 -5 16 0 M300 178 q8 -5 16 0" fill="none" stroke-width="2.5"/>
+        <g class="slide">
+          <path d="M20 122 H90" fill="none" stroke-width="2"/>
+          <rect x="24" y="126" width="16" height="13" rx="5" fill="#F6D27A"/>
+          <rect x="44" y="126" width="16" height="13" rx="5" fill="#F2A497"/>
+          <rect x="64" y="126" width="16" height="13" rx="5" fill="#B9DAA5"/>
+        </g>
+      </g>
+    </svg>
+    <div class="hero-body">
+      <span class="eyebrow">2026.11.4 – 11.9 ・ 6 天 5 夜</span>
+      <h1>釜山煙火之旅</h1>
+      <div class="count" aria-live="polite"><div><b id="cd-d">--</b><span>天</span></div><div><b id="cd-h">--</b><span>時</span></div><div><b id="cd-m">--</b><span>分</span></div><div><b id="cd-s">--</b><span>秒</span></div></div>
+      <p class="muted" id="count-note">距離 11/4 16:15 台中起飛</p>
+    </div>
+  </div>
+
+  <h2 class="sec-title"><svg width="32" height="32" viewBox="0 0 34 34" aria-hidden="true"><path d="M4 20l9-2 6-12h4l-3 11 8-2 2-4h3l-2 7 2 7h-3l-2-4-8-2 3 11h-4l-6-12-9-2z" fill="#A8D3E6" stroke="#3E3A39" stroke-width="2.5" stroke-linejoin="round"/></svg>航班</h2>
+  <div class="flights">
+    <article class="flight go"><div class="head"><span>去程 ・ 11/4（三）</span><span>真航空 LJ586</span></div>
+      <div class="end"><div class="t">16:15</div><div>台中 RMQ</div><div class="code">臺中國際機場 T1</div></div>
+      <svg viewBox="0 0 64 28" aria-hidden="true"><path d="M4 14h44" stroke="#3E3A39" stroke-width="3" stroke-dasharray="5 5" stroke-linecap="round"/><path d="M46 6l12 8-12 8z" fill="#F6D27A" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/></svg>
+      <div class="end r"><div class="t">19:35</div><div>釜山 PUS</div><div class="code">金海國際機場 國際線</div></div></article>
+    <article class="flight back"><div class="head"><span>回程 ・ 11/9（一）</span><span>真航空 LJ585</span></div>
+      <div class="end"><div class="t">14:00</div><div>釜山 PUS</div><div class="code">金海國際機場 國際線</div></div>
+      <svg viewBox="0 0 64 28" aria-hidden="true"><path d="M4 14h44" stroke="#3E3A39" stroke-width="3" stroke-dasharray="5 5" stroke-linecap="round"/><path d="M46 6l12 8-12 8z" fill="#F2A497" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/></svg>
+      <div class="end r"><div class="t">15:15</div><div>台中 RMQ</div><div class="code">臺中國際機場 T1</div></div></article>
+  </div>
+
+  <h2 class="sec-title"><svg width="32" height="32" viewBox="0 0 34 34" aria-hidden="true"><path d="M5 16L17 5l12 11v13H5z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="2.5" stroke-linejoin="round"/><rect x="13" y="19" width="8" height="10" rx="2" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.5"/></svg>住宿</h2>
+  <div class="card" style="display:grid;gap:12px">
+    <h3 style="font-size:19px">La Viange Maison de Hotel</h3>
+    <dl class="kv">
+      <dt>韓文地址</dt><dd class="ko">부산 해운대구 해운대해변로209번나길 56</dd>
+      <dt>英文地址</dt><dd>56 Haeundaehaebyeon-ro 209beonna-gil, Haeundae-gu, Busan</dd>
+      <dt>入住</dt><dd>11/4（三）16:00 後</dd>
+      <dt>退房</dt><dd>11/9（一）11:00 前</dd>
+      <dt>房東</dt><dd>Elliy Lee（Airbnb 傳訊息）</dd>
+      <dt>附近</dt><dd>海雲台站走路約 6 分；SEA LIFE、海灘、海里團路都在附近</dd>
+    </dl>
+    <div class="btns">
+      <button class="btn" type="button" data-driver="住宿 La Viange" data-ko="부산 해운대구 해운대해변로209번나길 56">給司機看</button>
+      <a class="btn alt" target="_blank" rel="noopener" id="home-naver">Naver 地圖</a>
+      <a class="btn g" target="_blank" rel="noopener" id="home-google">Google 地圖</a>
+    </div>
+  </div>
+
+  <h2 class="sec-title"><svg width="32" height="32" viewBox="0 0 34 34" aria-hidden="true"><rect x="5" y="9" width="24" height="18" rx="5" fill="#F6D27A" stroke="#3E3A39" stroke-width="2.5"/><path d="M12 9V6h10v3M5 17h24" stroke="#3E3A39" stroke-width="2.5" fill="none"/></svg>機場流程</h2>
+  <div class="card">
+    <div class="flow-tabs" role="tablist">
+      <button class="btn" type="button" role="tab" id="flow-go" aria-selected="true">11/4 去程</button>
+      <button class="btn w" type="button" role="tab" id="flow-back" aria-selected="false">11/9 回程</button>
+    </div>
+    <ol class="steps" id="flow-list"></ol>
+  </div>
+</section>
+
+<!-- ================= 每日行程 ================= -->
+<section id="v-plan" data-view="plan" hidden>
+  <h2 class="sec-title" style="margin-top:18px"><svg width="32" height="32" viewBox="0 0 34 34" aria-hidden="true"><rect x="4" y="7" width="26" height="23" rx="6" fill="#F6D27A" stroke="#3E3A39" stroke-width="2.5"/><path d="M4 14h26M11 4v6M23 4v6" stroke="#3E3A39" stroke-width="2.5" stroke-linecap="round"/></svg>每日行程</h2>
+  <p class="muted" style="margin:0">點交通那一行可以展開路線截圖；店家的營業時間點開可以看一週。</p>
+  <div class="tabs" role="tablist" aria-label="選擇日期" id="tabs"></div>
+  <div class="card" id="panel" role="tabpanel" tabindex="0"></div>
+</section>
+
+<!-- ================= 交通・地圖 ================= -->
+<section id="v-transit" data-view="transit" hidden>
+  <h2 class="sec-title" style="margin-top:18px"><svg width="32" height="32" viewBox="0 0 34 34" aria-hidden="true"><rect x="7" y="4" width="20" height="22" rx="6" fill="#B9DAA5" stroke="#3E3A39" stroke-width="2.5"/><path d="M7 16h20M11 31l3-5M23 31l-3-5" stroke="#3E3A39" stroke-width="2.5" stroke-linecap="round"/><circle cx="12" cy="21" r="1.6" fill="#3E3A39"/><circle cx="22" cy="21" r="1.6" fill="#3E3A39"/></svg>交通・地圖</h2>
+  <div class="card" style="display:grid;gap:10px">
+    <h3 style="font-size:18px">釜山地鐵景點地圖</h3>
+    <img class="shot" src="a/metro_map.jpg" alt="釜山地鐵景點地圖" data-zoom="釜山地鐵景點地圖" loading="lazy">
+    <p class="muted" style="margin:0">地圖來源：波比看世界 bobbyfun.tw（家人行程參考用）</p>
+  </div>
+  <div class="card" style="display:grid;gap:10px">
+    <h3 style="font-size:18px">地鐵・T-money</h3>
+    <ol class="steps">
+      <li><span class="tm">買卡</span><span>機場或便利商店（CU、GS25、7-11）買 T-money，一人一張</span></li>
+      <li><span class="tm">儲值</span><span>便利商店或地鐵站儲值機，<b style="font-weight:400;background:var(--yellow-l)">只收現金</b>，每人先儲 3 萬</span></li>
+      <li><span class="tm">進出站</span><span>進站、出站都要刷；30 分鐘內轉乘有優惠</span></li>
+      <li><span class="tm">看方向</span><span>月台寫的是「終點站名」，照下表找</span></li>
+      <li><span class="tm">導航</span><span>Naver Map 最準；末班車約晚上 11 點多</span></li>
+    </ol>
+    <div class="tbl-wrap"><table class="tbl">
+      <tr><th>路線</th><th>往哪裡</th><th>月台找這個字</th></tr>
+      <tr><td>2 號線</td><td>回海雲台（東）</td><td>萇山 장산</td></tr>
+      <tr><td>2 號線</td><td>往西面、金蓮山、Centum（西）</td><td>梁山 양산</td></tr>
+      <tr><td>1 號線</td><td>往西面（北）</td><td>老圃 노포</td></tr>
+      <tr><td>1 號線</td><td>往土城（南）</td><td>多大浦海水浴場 다대포해수욕장</td></tr>
+      <tr><td>輕軌</td><td>往機場</td><td>加耶大 가야대</td></tr>
+      <tr><td>輕軌</td><td>往沙上</td><td>沙上 사상</td></tr>
+    </table></div>
+  </div>
+  <div class="card" style="display:grid;gap:8px">
+    <h3 style="font-size:18px">機場巴士（리무진）</h3>
+    <dl class="kv">
+      <dt>上車</dt><dd>金海機場 1 樓 3 號乘車處</dd>
+      <dt>下車</dt><dd>「해운대해수욕장」海雲台海水浴場站，再走到住宿</dd>
+      <dt>票價</dt><dd>每人約 9,500～10,000，<b style="font-weight:400;background:var(--yellow-l)">只能刷卡</b></dd>
+      <dt>班次</dt><dd>班距約 20～30 分，機場出發末班約 21:40，趕不上就搭地鐵</dd>
+      <dt>回程</dt><dd>11/9 回程改搭地鐵＋輕軌，不用配合班次</dd>
+    </dl>
+    <p class="muted" style="margin:0">2025 年改過路線和號碼，網路資料不一致，出發前再到金海機場官網確認。沒有合適的班次就搭地鐵。</p>
+  </div>
+  <div class="card" style="display:grid;gap:10px">
+    <h3 style="font-size:18px">給司機看（全部計程車目的地）</h3>
+    <p class="muted" style="margin:0">點一下會放大到整個畫面，直接把手機給司機看。</p>
+    <div class="driver-list" id="driver-list"></div>
+  </div>
+</section>
+
+<!-- ================= 實用 ================= -->
+<section id="v-info" data-view="info" hidden>
+  <h2 class="sec-title" style="margin-top:18px"><svg width="32" height="32" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="13" fill="#A8D3E6" stroke="#3E3A39" stroke-width="2.5"/><path d="M17 15v8M17 10v.5" stroke="#3E3A39" stroke-width="3" stroke-linecap="round"/></svg>實用</h2>
+
+  <div class="card conv">
+    <h3 style="font-size:18px">韓幣換算</h3>
+    <label for="krw">韓元</label>
+    <input id="krw" inputmode="numeric" autocomplete="off" value="10000">
+    <div class="quick" id="quick"></div>
+    <div><span class="muted">約台幣</span> <span class="out" id="twd">--</span></div>
+    <label for="rate">匯率（1 韓元 ＝ ? 台幣，可以自己改）</label>
+    <input id="rate" inputmode="decimal" autocomplete="off" value="0.0245" style="font-size:17px">
+    <p class="muted" style="margin:0">預設 0.0245 是 2026 年 10 月的大約值；台銀換現金約 0.026，刷卡看帳單。</p>
+  </div>
+
+  <div class="card" style="display:grid;gap:10px" id="fw-guide">
+    <h3 style="font-size:18px">煙火節攻略（11/7 免費區）</h3>
+    <dl class="kv">
+      <dt>時間</dt><dd>主秀約 19:30，約 1 小時（以官方公告為準）</dd>
+      <dt>位置</dt><dd>付費座位在 Hotel Aqua Palace、Homers Hotel 前，我們坐旁邊的免費區</dd>
+      <dt>怎麼去</dt><dd>14:50 海雲台搭 2 號線 → 金蓮山站 1 號出口 → 走約 12 分到 Homers Hotel 前</dd>
+      <dt>晚餐</dt><dd>散場走約 10 分到 Durumi 排隊；排超過 40 分就放棄，回海雲台吃 24 小時的金壽河豚湯</dd>
+      <dt>回程</dt><dd>走到金蓮山站 1 號出口搭 2 號線往「萇山」；不要擠廣安站</dd>
+      <dt>必帶</dt><dd>折疊椅、野餐墊（돗자리）、羽絨外套、毛帽、手套、暖暖包、毯子、行動電源、OPS 麵包、垃圾袋</dd>
+      <dt>廁所</dt><dd>出發前先上；現場流動廁所排很久，借附近便利商店、咖啡廳</dd>
+      <dt>走散時</dt><dd>集合點：Homers Hotel 門口。現場人多，手機可能收訊不好</dd>
+    </dl>
+  </div>
+
+  <div class="card" style="display:grid;gap:10px">
+    <h3 style="font-size:18px">巨人炸雞 點餐卡（11/6 外帶）</h3>
+    <div class="phr" id="order"></div>
+    <p class="muted" style="margin:0">후라이드＝原味　양념＝甜辣醬　간장＝醬油　반반＝兩種各半</p>
+  </div>
+
+  <div class="card" style="display:grid;gap:10px">
+    <h3 style="font-size:18px">實用韓文（點了放大）</h3>
+    <div class="phr" id="phr"></div>
+  </div>
+
+  <div class="card" style="display:grid;gap:10px">
+    <h3 style="font-size:18px">天氣與穿搭（11 月上旬）</h3>
+    <div class="em"><div style="background:var(--mizu-l)"><b>17–20°</b>白天</div><div style="background:var(--lav-l)"><b>9–12°</b>早晚</div><div style="background:var(--coral-l)"><b>個位數</b>煙火夜</div></div>
+    <p style="margin:0">晴天多、雨少，海邊風大。洋蔥式穿：長袖＋毛衣＋防風外套，煙火夜加羽絨外套。好走的防滑鞋（甘川洞、龍宮寺石階多）。韓國插座是 220V 圓孔，要帶轉接頭。</p>
+  </div>
+
+  <div class="card" style="display:grid;gap:10px">
+    <h3 style="font-size:18px">緊急聯絡</h3>
+    <div class="em"><div><b>112</b>報警</div><div><b>119</b>火災・救護</div><div><b>1330</b>觀光諮詢（中文）</div></div>
+    <p style="margin:0">外交部旅外急難救助：<span style="user-select:all">+886-800-0885-0885</span></p>
+  </div>
+
+  <div class="card" style="display:grid;gap:10px">
+    <h3 style="font-size:18px">出發前待辦</h3>
+    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap"><div class="bar" aria-hidden="true"><i id="bar"></i></div><span id="todo-count">0 / 0</span></div>
+    <ul class="todos" id="todos"></ul>
+    <p class="muted" style="margin:0">打勾只會記在這支手機上。</p>
+  </div>
+</section>
+
+<footer>釜山 2026 ・ 祝旅途愉快</footer>
+</main>
+
+<!-- 全螢幕：司機卡／韓文 -->
+<div class="overlay" id="ov-text" hidden role="dialog" aria-modal="true" aria-labelledby="ov-big">
+  <div class="ov-bar"><span class="muted" id="ov-label"></span><button class="btn w" type="button" data-close>關閉</button></div>
+  <div class="ov-body">
+    <div class="ov-please" id="ov-please">여기로 가 주세요</div>
+    <div class="ov-big" id="ov-big"></div>
+    <div class="ov-sub" id="ov-sub"></div>
+  </div>
+</div>
+<!-- 全螢幕：圖片 -->
+<div class="overlay" id="ov-img" hidden role="dialog" aria-modal="true" aria-label="放大圖片">
+  <div class="ov-bar"><span class="muted" id="ov-img-t"></span><span class="btns"><button class="btn" type="button" id="ov-zoom">放大</button><button class="btn w" type="button" data-close>關閉</button></span></div>
+  <div class="ov-img" id="ov-img-box" style="margin-top:12px"><img id="ov-img-el" alt=""></div>
+</div>
+
+<script src="data.js"></script>
+<script>
+(function(){
+  const {P, DAYS, TICKETS, TODOS, HOME} = window.TRIP;
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+  const fmt = (n) => n.toLocaleString("en-US");
+  const WD = ["日","一","二","三","四","五","六"];
+  const naver = (q) => "https://map.naver.com/p/search/" + encodeURIComponent(q);
+  const google = (q) => "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(q);
+  const cleanAddr = (a) => a.replace(/（.*?）|\(.*?\)/g, "").trim();
+  let store = null; try { store = window.localStorage; } catch(e){}
+  const get = (k) => { try { return store ? store.getItem(k) : null; } catch(e){ return null; } };
+  const set = (k,v) => { try { store && store.setItem(k,v); } catch(e){} };
+
+  /* ---------- 首頁 ---------- */
+  $("home-naver").href = naver(HOME); $("home-google").href = google(HOME);
+  const T0 = new Date("2026-11-04T16:15:00+08:00").getTime(), T1 = new Date("2026-11-09T15:15:00+08:00").getTime();
+  const pad = (n) => String(n).padStart(2,"0");
+  function tick(){
+    const now = Date.now(), diff = T0 - now;
+    if (diff <= 0){ ["cd-d","cd-h","cd-m","cd-s"].forEach(i => $(i).textContent = "00");
+      $("count-note").textContent = now < T1 ? "已經出發囉，正在釜山玩！" : "旅程結束，歡迎回家！"; return; }
+    const s = Math.floor(diff/1000);
+    $("cd-d").textContent = Math.floor(s/86400); $("cd-h").textContent = pad(Math.floor(s%86400/3600));
+    $("cd-m").textContent = pad(Math.floor(s%3600/60)); $("cd-s").textContent = pad(s%60);
+  }
+  tick(); setInterval(tick, 1000);
+
+  const FLOW = {
+    go: [
+      ["13:45","到台中機場 T1","真航空櫃台報到、托運行李"],
+      ["14:30","出境安檢","液體 100ml 以下放透明袋；行動電源放手提"],
+      ["15:45","登機","16:15 起飛，約 2 小時 20 分"],
+      ["19:35","抵達金海機場","入境卡填「紙本」（電子入境卡把台灣列為 CHINA(TAIWAN)，外交部建議填紙本）"],
+      ["19:45","證照查驗 → 領行李 → 海關","台灣護照免簽、2026 年底前免 K-ETA"],
+      ["20:05","1 樓入境大廳","便利商店買 T-money ×4、現金儲值（地鐵備案用）"],
+      ["20:15","1 樓 3 號乘車處 搭機場巴士","只能刷卡，坐到「해운대해수욕장」站不用換車；末班約 21:40，趕不上就搭地鐵"],
+    ],
+    back: [
+      ["08:30","起床、整理行李","退稅單、要給海關看的免稅品放手提"],
+      ["10:15","退房","房東交代的事情做完，鑰匙密碼不要外流"],
+      ["10:25","海雲台站搭 2 號線 → 沙上換輕軌","每人約 2,500，刷 T-money；不用配合班次"],
+      ["11:35","抵達國際線出境大廳","先找退稅 KIOSK：掃護照和退稅單（市區已即時退稅的免辦）"],
+      ["11:45","真航空櫃台報到、托運","需要海關蓋章的退稅品，要在托運前給海關看"],
+      ["12:30","出境安檢、證照查驗","出境後也有退稅 KIOSK 和免稅店"],
+      ["13:20","登機","14:00 起飛，15:15 抵達台中；剩的韓幣在機場花掉"],
+    ]};
+  function flow(which){
+    $("flow-go").setAttribute("aria-selected", which==="go"); $("flow-back").setAttribute("aria-selected", which==="back");
+    $("flow-go").className = "btn" + (which==="go" ? "" : " w"); $("flow-back").className = "btn" + (which==="back" ? "" : " w");
+    $("flow-list").innerHTML = FLOW[which].map(([t,a,b]) => `<li><span class="tm">${t}</span><span>${esc(a)}<small>${esc(b)}</small></span></li>`).join("");
+  }
+  $("flow-go").onclick = () => flow("go"); $("flow-back").onclick = () => flow("back"); flow("go");
+
+  /* ---------- 時間 ---------- */
+  function seoulNow(){ const s = new Date().toLocaleString("en-US",{timeZone:"Asia/Seoul",hour12:false});
+    const d = new Date(s); return { y:d.getFullYear(), m:d.getMonth()+1, d:d.getDate(), mins:d.getHours()*60+d.getMinutes() }; }
+  const toMin = (t) => { if(!t) return null; const m = /^(\d\d):(\d\d)$/.exec(t); return m ? (+m[1])*60 + (+m[2]) : null; };
+  function tripDayIndex(){ const n = seoulNow(); return (n.y===2026 && n.m===11 && n.d>=4 && n.d<=9) ? n.d-4 : -1; }
+
+  /* ---------- 行程渲染 ---------- */
+  const ICON = {
+    plane:'<path d="M8 38l16-4 10-20h7l-5 18 14-3 4-7h5l-3 12 3 12h-5l-4-7-14-3 5 18h-7L24 46 8 42z" fill="#A8D3E6"/>',
+    cable:'<path d="M4 12L60 4" fill="none"/><path d="M32 8v10" fill="none"/><rect x="18" y="18" width="28" height="26" rx="8" fill="#F2A497"/><rect x="23" y="24" width="18" height="9" rx="3" fill="#FFFCF6"/><path d="M8 58q12-8 24 0t24 0" fill="none"/>',
+    tower:'<path d="M28 58l2-34h4l2 34z" fill="#FFFCF6"/><rect x="22" y="14" width="20" height="12" rx="6" fill="#A8D3E6"/><path d="M32 14V4" fill="none"/><path d="M6 58h52" fill="none"/><circle cx="12" cy="50" r="7" fill="#B9DAA5"/><circle cx="52" cy="50" r="7" fill="#B9DAA5"/>',
+    fire:'<g class="burst"><path d="M32 30V10M32 30v20M32 30H12M32 30h20M32 30L18 16M32 30l14 14M32 30l14-14M32 30L18 44" stroke="#F2A497" fill="none"/></g><circle cx="32" cy="30" r="5" fill="#F6D27A"/>',
+    capsule:'<path d="M4 20h56" fill="none"/><path d="M14 20v6M32 20v6M50 20v6" fill="none"/><rect x="6" y="26" width="16" height="16" rx="6" fill="#F6D27A"/><rect x="24" y="26" width="16" height="16" rx="6" fill="#F2A497"/><rect x="42" y="26" width="16" height="16" rx="6" fill="#A8D3E6"/><path d="M4 56q10-6 20 0t20 0t20 0" fill="none"/>',
+    bag:'<rect x="12" y="20" width="40" height="34" rx="8" fill="#B9DAA5"/><path d="M24 20v-8h16v8M12 34h40" fill="none"/>'
+  };
+  const MODE = { metro:["m-metro","地鐵"], taxi:["m-taxi","計程車"], walk:["m-walk","走路"], bus:["m-bus","機場巴士"], train:["m-train","海岸列車"], cable:["m-cable","纜車"] };
+  const chev = '<svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="#3E3A39" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const DRIVERS = [];
+
+  function legHTML(it, id){
+    const [cls, label] = MODE[it.mode];
+    const meta = [it.mins, it.fare ? "₩" + fmt(it.fare) : ""].filter(Boolean).join("・");
+    let body = "";
+    if (it.note) body += `<div class="note">💡 ${esc(it.note)}</div>`;
+    if (it.fareNote) body += `<div class="note">💳 ${esc(it.fareNote)}</div>`;
+    if (it.ko){ const di = DRIVERS.push({ to: it.to || it.title, ko: it.ko }) - 1;
+      body += `<div class="btns"><button class="btn" type="button" data-di="${di}">給司機看</button><a class="btn alt" target="_blank" rel="noopener" href="${naver(it.ko.split("\n").pop())}">Naver 地圖</a></div>`; }
+    if (it.map) body += `<img class="shot" loading="lazy" src="a/${it.map}.jpg" alt="${esc(it.title)} 地鐵路線圖" data-zoom="${esc(it.title)}">
+      <img class="shot" loading="lazy" src="a/${it.strip}.png" alt="${esc(it.title)} 逐站圖" data-zoom="${esc(it.title)}（逐站）">`;
+    if (it.shot) body += `<img class="shot" loading="lazy" src="a/${it.shot}.jpg" alt="${esc(it.title)} Naver 路線截圖" data-zoom="${esc(it.title)}">`;
+    const has = body.length > 0;
+    return `<details class="leg" id="${id}"${has ? "" : " data-empty"}><summary>
+      <span class="mode ${cls}">${label}</span><span class="lt">${it.backup ? '<span class="backup-label">備案</span> ' : ""}${esc(it.title.replace(/^備案：/,""))}</span>
+      <span class="lm">${esc(meta)}</span>${has ? chev : ""}</summary>${has ? `<div class="leg-body">${body}</div>` : ""}</details>`;
+  }
+  function stopHTML(it, wd){
+    const p = P[it.key];
+    const vis = p.hours[wd] || p.hours.find(Boolean) || "";
+    const uniq = new Set(p.hours.filter(Boolean)).size;
+    const week = uniq > 1 || p.hours.length ? `<table>${[1,2,3,4,5,6,0].map(i => `<tr class="${i===wd?"vis":""}"><td>週${WD[i]}</td><td>${esc(p.hours[i]||"—")}</td></tr>`).join("")}</table>` : "";
+    const photo = p.photo ? `<img class="ph" loading="lazy" src="a/${p.photo}.jpg" alt="${esc(p.zh)}" data-zoom="${esc(p.zh)}">` : "";
+    const q = cleanAddr(p.addr);
+    const extra = it.extraImg ? `<div class="extra-img"><img class="shot" loading="lazy" src="a/${it.extraImg.src}.jpg" alt="${esc(it.extraImg.title)}" data-zoom="${esc(it.extraImg.title)}"><div class="muted" style="margin-top:4px">${esc(it.extraImg.title)}（來源：波比看世界）</div></div>` : "";
+    const links = it.key === "airport" ? "" : `<div class="btns">
+        ${p.addr && p.type!=="home" ? `<button class="btn" type="button" data-dko="${esc(p.ko)}\n${esc(q)}" data-dto="${esc(p.zh)}">給司機看</button>` : ""}
+        <a class="btn alt" target="_blank" rel="noopener" href="${naver(p.ko.split(" · ")[0] || q)}">Naver 地圖</a>
+        <a class="btn g" target="_blank" rel="noopener" href="${google(q)}">Google 地圖</a>
+        ${it.orderCard ? `<a class="btn c" href="#info" data-jump="order">點餐卡</a>` : ""}
+        ${it.guide ? `<a class="btn c" href="#info" data-jump="fw-guide">煙火攻略</a>` : ""}
+        ${it.airport ? `<a class="btn c" href="#home" data-jump="flow-list">機場流程</a>` : ""}
+      </div>`;
+    return `<article class="place${p.star?" star":""}${p.type==="home"?" home":""}">
+      <div class="place-top${photo?"":" nophoto"}">${photo}<div>
+        <h4>${esc(p.zh)}${p.star?'<span class="star-badge">★ 激推</span>':""}</h4>
+        <div class="kor">${esc(p.ko)}</div>
+        ${it.stay ? `<div class="row"><b>停留</b>${esc(it.stay)}</div>` : ""}
+        ${it.note ? `<div class="row"><b>說明</b>${esc(it.note)}</div>` : ""}
+        ${p.price ? `<div class="row"><b>費用</b>${esc(p.price)}</div>` : ""}
+        ${p.phone && p.phone!=="—" ? `<div class="row"><b>電話</b><span style="user-select:all">${esc(p.phone)}</span></div>` : ""}
+        <div class="row"><b>地址</b><span style="user-select:all">${esc(p.addr)}</span></div>
+      </div></div>
+      ${vis ? `<details class="hours"><summary>🕒 週${WD[wd]}：${esc(vis)} ${chev}</summary>${week}</details>` : ""}
+      ${p.tip ? `<div class="tip">💡 ${esc(p.tip)}</div>` : ""}
+      ${extra}${links}
+    </article>`;
+  }
+
+  const tabs = $("tabs"), panel = $("panel");
+  const tIdx = tripDayIndex();
+  DAYS.forEach((day,i) => {
+    const b = document.createElement("button");
+    b.className = "tab"; b.type = "button"; b.id = "tab-"+i; b.setAttribute("role","tab"); b.setAttribute("aria-controls","panel");
+    b.innerHTML = `<small>DAY ${i+1}</small><b>${day.d}</b><small>週${WD[day.w]}</small>${i===tIdx?'<span class="today">今天</span>':""}`;
+    b.onclick = () => showDay(i, true);
+    tabs.appendChild(b);
+  });
+  tabs.addEventListener("keydown", (e) => {
+    const cur = [...tabs.children].findIndex(t => t.getAttribute("aria-selected")==="true");
+    let n = null; if (e.key==="ArrowRight") n = (cur+1)%6; if (e.key==="ArrowLeft") n = (cur+5)%6;
+    if (n!==null){ showDay(n,true); tabs.children[n].focus(); }
+  });
+
+  let curDay = 0;
+  function showDay(i, anim){
+    curDay = i; DRIVERS.length = 0;
+    [...tabs.children].forEach((t,j) => { t.setAttribute("aria-selected", j===i); t.tabIndex = j===i ? 0 : -1; });
+    panel.setAttribute("aria-labelledby","tab-"+i);
+    const day = DAYS[i];
+    const rows = day.items.map((it,j) => {
+      const id = `it-${i}-${j}`;
+      let inner = "";
+      if (it.k==="leg") inner = legHTML(it, "leg-"+id);
+      else if (it.k==="stop") inner = (it.backup ? '<span class="backup-label" style="display:inline-block;margin-bottom:4px">備案</span>' : "") + stopHTML(it, day.w);
+      else inner = `<div class="ev"><div class="t1">${esc(it.title)}</div>${it.note?`<div class="t2">${esc(it.note)}</div>`:""}</div>`;
+      const cls = ["it", "it-"+it.k, it.k==="stop" && P[it.key].star ? "star":"", it.backup?"backup":""].filter(Boolean).join(" ");
+      return `<li class="${cls}" id="${id}"><div class="tm">${it.t||""}</div><div class="dot" aria-hidden="true"></div><div>${inner}</div></li>`;
+    }).join("");
+    const rain = day.rain.length ? `<details class="rain"><summary>☔ 下雨天怎麼辦 ${chev}</summary><ul>${day.rain.map(([a,b])=>`<li><b style="font-weight:400;background:var(--card);border:2px solid var(--line-c);border-radius:8px;padding:0 6px">${esc(a)}</b> ${esc(b)}</li>`).join("")}</ul></details>` : "";
+    panel.innerHTML = `<div class="day-head"><svg viewBox="0 0 64 64" aria-hidden="true"><g class="float" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">${ICON[day.icon]}</g></svg>
+      <div><div class="muted">DAY ${i+1} ・ ${day.d}（週${WD[day.w]}）</div><h3>${esc(day.title)}</h3></div></div>${rain}<ol class="timeline">${rows}</ol>`;
+    if (anim){ panel.classList.remove("panel-anim"); void panel.offsetWidth; panel.classList.add("panel-anim"); }
+    markNow();
+    set("busan-day", String(i));
+  }
+
+  /* ---------- 現在／下一站 ---------- */
+  function nowNext(){
+    const di = tripDayIndex(); if (di<0) return null;
+    const n = seoulNow(); const items = DAYS[di].items.map((it,j)=>({it,j,m:toMin(it.t)})).filter(x=>x.m!==null && !x.it.backup);
+    let cur = null, nxt = null;
+    for (const x of items){ if (x.m <= n.mins) cur = x; else { nxt = x; break; } }
+    return { di, cur, nxt };
+  }
+  const label = (it) => it.k==="stop" ? P[it.key].zh : it.title;
+  function markNow(){
+    const r = nowNext(); const bar = $("nowbar");
+    if (!r){ bar.classList.remove("on"); return; }
+    bar.classList.add("on");
+    $("now-a").innerHTML = r.cur ? `<b>現在</b>${esc(r.cur.it.t)} ${esc(label(r.cur.it))}` : `<b>今天</b>${esc(DAYS[r.di].title)}`;
+    $("now-b").innerHTML = r.nxt ? `<b style="background:var(--bamboo)">下一站</b>${esc(r.nxt.it.t)} ${esc(label(r.nxt.it))}` : "今天的行程走完了";
+    if (r.di === curDay){
+      panel.querySelectorAll(".it.now,.it.next").forEach(e=>e.classList.remove("now","next"));
+      panel.querySelectorAll(".nowtag,.nexttag").forEach(e=>e.remove());
+      if (r.cur){ const el = $(`it-${r.di}-${r.cur.j}`); if (el){ el.classList.add("now"); el.querySelector(".tm").insertAdjacentHTML("beforeend",'<div><span class="nowtag">現在</span></div>'); } }
+      if (r.nxt){ const el = $(`it-${r.di}-${r.nxt.j}`); if (el){ el.classList.add("next"); el.querySelector(".tm").insertAdjacentHTML("beforeend",'<div><span class="nexttag">下一站</span></div>'); } }
+    }
+  }
+  $("now-go").onclick = () => { const r = nowNext(); if(!r) return; go("plan"); if (curDay!==r.di) showDay(r.di,false);
+    const t = r.nxt || r.cur; if (t) setTimeout(()=>$(`it-${r.di}-${t.j}`)?.scrollIntoView({behavior:"smooth",block:"center"}), 60); };
+  setInterval(markNow, 60000);
+
+  let start = parseInt(get("busan-day") || "0", 10); if (tIdx>=0) start = tIdx;
+  showDay(isNaN(start) ? 0 : Math.min(Math.max(start,0),5), false);
+
+  /* ---------- 票券・交通費 ---------- */
+  let rate = parseFloat(get("busan-rate") || "0.0245"); if (!(rate>0)) rate = 0.0245;
+  const twd = (k) => "約 NT$" + fmt(Math.round(k*rate));
+  function renderTickets(){ if (!$("sum")) return;
+    const row = (t) => { const tot = t.each*t.n; return `<div class="tk${t.pre?" pre":""}"><div class="nm">${esc(t.name)}</div>
+      <div class="amt">₩${fmt(tot)}<div class="tw">${twd(tot)}</div></div><div class="sm">${esc(t.when)}・₩${fmt(t.each)} × ${t.n}${t.n===1?" 車廂":" 人"}・${esc(t.how)}${t.opt?"（不算進總和）":""}</div></div>`; };
+    $("tk-pre").innerHTML = TICKETS.filter(t=>t.pre).map(row).join("");
+    $("tk-site").innerHTML = TICKETS.filter(t=>!t.pre).map(row).join("");
+    const pre = TICKETS.filter(t=>t.pre && !t.opt).reduce((a,t)=>a+t.each*t.n,0);
+    const site = TICKETS.filter(t=>!t.pre).reduce((a,t)=>a+t.each*t.n,0);
+    const legs = []; DAYS.forEach(d => d.items.forEach(it => { if (it.k==="leg" && it.fare && !it.backup) legs.push([d.d, it]); }));
+    const taxi = legs.filter(([,it])=>it.mode==="taxi").reduce((a,[,it])=>a+it.fare,0);
+    const bus = legs.filter(([,it])=>it.mode!=="taxi").reduce((a,[,it])=>a+it.fare,0);
+    const all = pre + site + taxi + bus;
+    $("sum").innerHTML = [["先訂門票",pre],["現場門票",site],["計程車＋巴士＋地鐵",taxi+bus],["4 人合計",all]]
+      .map(([a,b]) => `<div><b>₩${fmt(b)}</b><span>${a}<br>${twd(b)}</span></div>`).join("") +
+      `<div style="grid-column:1/-1;background:var(--card)"><b>每人約 ₩${fmt(Math.round(all/4))}</b><span>${twd(Math.round(all/4))}（不含吃飯、購物、地鐵）</span></div>`;
+    $("fare-tbl").innerHTML = `<tr><th>日期</th><th>路段</th><th>車資</th></tr>` +
+      legs.map(([d,it]) => `<tr><td>${d}</td><td>${esc(it.mode==="taxi" ? "計程車・" + it.title : it.title)}</td><td style="white-space:nowrap">₩${fmt(it.fare)}</td></tr>`).join("") +
+      `<tr><td colspan="2">計程車合計（4 人分攤）</td><td style="white-space:nowrap">₩${fmt(taxi)}</td></tr><tr><td colspan="2">機場巴士去程＋地鐵回程（4 人）</td><td style="white-space:nowrap">₩${fmt(bus)}</td></tr>`;
+  }
+  renderTickets();
+
+  /* ---------- 換算 ---------- */
+  const krw = $("krw"), rateEl = $("rate"); rateEl.value = rate;
+  function conv(){ const k = parseFloat(String(krw.value).replace(/[^\d.]/g,"")) || 0; $("twd").textContent = "NT$ " + fmt(Math.round(k*rate)); }
+  krw.addEventListener("input", conv);
+  rateEl.addEventListener("input", () => { const r = parseFloat(rateEl.value); if (r>0){ rate = r; set("busan-rate", String(r)); conv(); renderTickets(); } });
+  $("quick").innerHTML = [1000,5000,10000,50000,100000].map(v=>`<button class="btn w" type="button" data-k="${v}">₩${fmt(v)}</button>`).join("");
+  $("quick").onclick = (e) => { const b = e.target.closest("[data-k]"); if (b){ krw.value = b.dataset.k; conv(); } };
+  conv();
+
+  /* ---------- 實用：韓文、點餐卡 ---------- */
+  const PH = [["請到這裡","여기로 가 주세요"],["4 位","네 명이요"],["請給我這個","이거 주세요"],["多少錢？","얼마예요?"],["可以刷卡嗎？","카드 돼요?"],
+    ["要等多久？","얼마나 기다려야 돼요?"],["請不要辣","안 맵게 해 주세요"],["打包","포장해 주세요"],["結帳","계산해 주세요"],["廁所在哪裡？","화장실 어디예요?"],
+    ["收據","영수증 주세요"],["請開後車廂","트렁크 열어 주세요"],["在這裡下車","여기서 내려 주세요"],["謝謝","감사합니다"]];
+  const OD = [["原味炸雞一隻，外帶","후라이드 한 마리 포장해 주세요"],["半原味半醬一隻，外帶","반반 한 마리 포장해 주세요"],["兩隻，外帶","두 마리 포장해 주세요"],["要等多久？","얼마나 기다려야 돼요?"],["可以刷卡嗎？","카드 돼요?"]];
+  const phr = (arr) => arr.map(([z,k]) => `<button type="button" data-pz="${esc(z)}" data-pk="${esc(k)}"><small>${esc(z)}</small><span>${esc(k)}</span></button>`).join("");
+  $("phr").innerHTML = phr(PH); $("order").innerHTML = phr(OD);
+
+  /* ---------- 司機卡列表 ---------- */
+  function renderDrivers(){
+    const seen = new Set(); const list = [];
+    DAYS.forEach(d => d.items.forEach(it => { if (it.k==="leg" && it.ko && !seen.has(it.ko)){ seen.add(it.ko); list.push({d:d.d, to: it.to || it.title, ko: it.ko}); } }));
+    $("driver-list").innerHTML = list.map(x => `<button type="button" data-dko="${esc(x.ko)}" data-dto="${esc(x.to)}"><small>${x.d}・${esc(x.to)}</small>${esc(x.ko.split("\n")[0])}</button>`).join("");
+  }
+  renderDrivers();
+
+  /* ---------- 待辦 ---------- */
+  let saved = {}; try { saved = JSON.parse(get("busan-todo2") || "{}") || {}; } catch(e){}
+  $("todos").innerHTML = TODOS.map(([id,t,n,hot]) => `<li class="todo${hot?" hot":""}"><label for="td-${id}"><input type="checkbox" id="td-${id}" data-td="${id}"${saved[id]?" checked":""}><span>${esc(t)}${hot?"・先處理":""}${n?`<small>${esc(n)}</small>`:""}</span></label></li>`).join("");
+  function prog(){ const n = TODOS.filter(t=>saved[t[0]]).length; $("todo-count").textContent = `${n} / ${TODOS.length} 完成`; $("bar").style.width = (n/TODOS.length*100)+"%"; }
+  $("todos").addEventListener("change", (e) => { const id = e.target.dataset.td; if (id){ saved[id] = e.target.checked; set("busan-todo2", JSON.stringify(saved)); prog(); } });
+  prog();
+
+  /* ---------- 全螢幕 ---------- */
+  const ovT = $("ov-text"), ovI = $("ov-img"); let lastFocus = null;
+  function openText(label, big, sub, please){ lastFocus = document.activeElement;
+    $("ov-label").textContent = label; $("ov-big").textContent = big; $("ov-sub").textContent = sub || ""; $("ov-please").hidden = !please;
+    ovT.hidden = false; ovT.querySelector("[data-close]").focus(); }
+  function openImg(src, title){ lastFocus = document.activeElement; $("ov-img-el").src = src; $("ov-img-el").alt = title; $("ov-img-t").textContent = title;
+    $("ov-img-box").classList.remove("zoom"); $("ov-zoom").textContent = "放大"; ovI.hidden = false; ovI.querySelector("[data-close]").focus(); }
+  function closeOv(){ ovT.hidden = true; ovI.hidden = true; lastFocus?.focus?.(); }
+  document.querySelectorAll("[data-close]").forEach(b => b.onclick = closeOv);
+  document.addEventListener("keydown", (e) => { if (e.key==="Escape") closeOv(); });
+  $("ov-zoom").onclick = () => { const z = $("ov-img-box").classList.toggle("zoom"); $("ov-zoom").textContent = z ? "縮小" : "放大"; };
+
+  document.addEventListener("click", (e) => {
+    const di = e.target.closest("[data-di]"); if (di){ const d = DRIVERS[+di.dataset.di]; openText("給司機看・" + d.to, d.ko, d.to, true); return; }
+    const dk = e.target.closest("[data-dko]"); if (dk){ openText("給司機看・" + dk.dataset.dto, dk.dataset.dko, dk.dataset.dto, true); return; }
+    const dr = e.target.closest("[data-driver]"); if (dr){ openText("給司機看・" + dr.dataset.driver, dr.dataset.ko, dr.dataset.driver, true); return; }
+    const pk = e.target.closest("[data-pk]"); if (pk){ openText(pk.dataset.pz, pk.dataset.pk, pk.dataset.pz, false); return; }
+    const z = e.target.closest("img[data-zoom]"); if (z){ openImg(z.currentSrc || z.src, z.dataset.zoom); return; }
+    const j = e.target.closest("[data-jump]"); if (j){ e.preventDefault(); go(j.getAttribute("href").slice(1)); setTimeout(()=>$(j.dataset.jump)?.scrollIntoView({behavior:"smooth",block:"start"}),60); return; }
+    const a = e.target.closest("a[data-v]"); if (a){ e.preventDefault(); go(a.dataset.v); }
+  });
+
+  /* ---------- 分頁 ---------- */
+  const VIEWS = ["home","plan","transit","info"];
+  function go(v){ if (!VIEWS.includes(v)) v = "home";
+    document.querySelectorAll("[data-view]").forEach(s => s.hidden = s.dataset.view !== v);
+    document.querySelectorAll("#nav a").forEach(a => { if (a.dataset.v===v) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current"); });
+    try { history.replaceState(null, "", "#" + v); } catch(e){}
+    window.scrollTo({top:0}); set("busan-view", v);
+  }
+  const h = (location.hash || "").slice(1);
+  go(VIEWS.includes(h) ? h : (tIdx>=0 ? "plan" : (get("busan-view") || "home")));
+})();
+</script>
+</body></html>
