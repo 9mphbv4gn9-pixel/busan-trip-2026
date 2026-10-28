@@ -1,5 +1,4 @@
-<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style></head><body>
-<title>釜山煙火之旅</title>
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>釜山煙火之旅</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -139,6 +138,10 @@ dl.kv dd{margin:0;min-width:0;overflow-wrap:anywhere}
 .place .row b{font-weight:400;color:var(--ink-soft);margin-right:4px}
 .star-badge{font-size:12px;background:var(--coral);border:2px solid var(--line-c);border-radius:var(--r-pill);padding:0 8px;margin-left:4px;vertical-align:2px;white-space:nowrap}
 .place .tip{font-size:14px;padding:0 12px 10px}
+.place .deal{margin:0 12px 10px;padding:10px 12px;border:2px dashed var(--line,#333);border-radius:12px;font-size:14px;background:rgba(255,200,80,.12)}
+.place .deal ol{margin:6px 0;padding-left:20px}
+.place .deal li{margin:2px 0}
+.place .deal a{font-weight:700}
 .place .btns{padding:0 12px 12px}
 .hours{margin:0 12px 10px;border:2px solid var(--line-c);border-radius:12px;background:var(--paper)}
 .hours summary{cursor:pointer;list-style:none;padding:6px 10px;font-size:14px;display:flex;gap:6px;align-items:center}
@@ -566,6 +569,7 @@ footer{text-align:center;font-size:13px;color:var(--ink-soft)}
       </div></div>
       ${vis ? `<details class="hours"><summary>🕒 週${WD[wd]}：${esc(vis)} ${chev}</summary>${week}</details>` : ""}
       ${p.tip ? `<div class="tip">💡 ${esc(p.tip)}</div>` : ""}
+      ${(p.deals||[]).map(d => `<div class="deal"><b>🎁 ${esc(d.title)}</b><ol>${d.steps.map(x=>`<li>${esc(x)}</li>`).join("")}</ol>${d.link?`<a target="_blank" rel="noopener" href="${esc(d.link)}">${esc(d.linkText||"原文")} ↗</a>`:""}</div>`).join("")}
       ${extra}${links}
     </article>`;
   }
