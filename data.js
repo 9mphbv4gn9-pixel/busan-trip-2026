@@ -125,9 +125,9 @@ window.TRIP = (function () {
         "打開條碼連結，用裡面的條碼入場；打不開就用 Chrome 開，或到售票機輸入末四碼 8786",
         "KKday 訂單 26KK269534642（2 人座 ×2）"],
         link: "https://tket.me/ncrrhjp", linkText: "入場條碼" }] },
-    hillspa: { zh: "Hillspa 汗蒸幕（可選）", ko: "힐스파 (언덕위의집)", type: "spot", price: "BIG5（4 小時）",
+    hillspa: { zh: "Hillspa 汗蒸幕", ko: "힐스파 (언덕위의집)", type: "spot", price: "BIG5（4 小時）",
       addr: "부산 해운대구 달맞이길117번길 11", hours: all("24 小時（00:00–06:00 浴池清潔）"), phone: "051-913-5700",
-      tip: "BIG5 第 5 個名額用這裡或松島龍宮雲橋，二選一。消費結帳直接刷卡。",
+      tip: "用 BIG5 第 5 個名額（龍宮雲橋付現金 1,000）。00:00–06:00 浴池清潔，12 點前離開。消費結帳直接刷卡。",
       deals: [{ title: "去之前要知道", steps: [
         "盥洗用品要自己帶",
         "3 樓入口可以免費拿墊子、枕頭，一人一組；毯子租借 1,000",
@@ -240,9 +240,6 @@ window.TRIP = (function () {
       S("geoin", "18:20", { stay: "外帶 約 30 分", orderCard: true }),
       L("taxi", "18:50", "巨人炸雞 → 住宿", { mins: "約 46 分", fare: 16800, shot: "r23", ko: HOME, to: "住宿", note: "週五晚上會塞車，回住宿吃炸雞。" }),
       E("19:40", "回到住宿吃炸雞", "", "home"),
-      L("taxi", "21:00", "（可選）住宿 → Hillspa", { mins: "約 10 分", fare: 4800, ko: "힐스파\n부산 해운대구 달맞이길117번길 11", to: "Hillspa" }),
-      S("hillspa", "21:10", { stay: "約 2 小時 30 分，00:00 前離開" }),
-      L("taxi", "23:40", "Hillspa → 住宿", { mins: "約 10 分", fare: 6700, ko: HOME, to: "住宿" }),
     ], rain: [
       ["白淺灘", "改去影島的「國立海洋博物館」（국립해양박물관，室內、免費、週一休），離海女村很近。"],
       ["海女村", "雨天多半沒開，直接去新東亞市場。"],
@@ -291,7 +288,7 @@ window.TRIP = (function () {
       S("yihwawon", "12:15", { stay: "午餐 約 1 小時" }),
       L("walk", "13:15", "頤和園 → 松島海灘", { mins: "約 5 分", shot: "r09", note: "海邊走走約 15 分。" }),
       L("walk", "13:35", "松島海灘 → 纜車 松島灣站", { mins: "約 5 分", shot: "r10" }),
-      S("cable", "13:45", { note: "松島灣站 → 岩南公園 Sky Park 站。不去 Hillspa 的話，BIG5 第 5 個名額用在龍宮雲橋。" }),
+      S("cable", "13:45", { note: "松島灣站 → 岩南公園 Sky Park 站。" }),
       S("bridge", "14:00", { stay: "約 1 小時" }),
       E("15:00", "搭纜車回松島灣站", "", "cable"),
       L("walk", "15:15", "纜車站 → 松島天空步道", { mins: "約 3 分", shot: "r12" }),
@@ -301,7 +298,11 @@ window.TRIP = (function () {
       L("walk", "19:30", "83 獬豸 → 西面站", { mins: "約 1 分", shot: "r14" }),
       L("metro", "19:35", "地鐵 西面 → 海雲台", { mins: "約 35 分", map: "hseomyeon_haeundae", strip: "sseomyeon_haeundae",
         note: "跟綠色「2호선 장산 방면」指標。海雲台站出站走回住宿約 6 分。" }),
-      E("20:15", "回到住宿", "整理行李，明天退房", "home"),
+      E("20:15", "回到住宿", "放東西、先整理一下行李", "home"),
+      L("taxi", "21:00", "住宿 → Hillspa", { mins: "約 10 分", fare: 4800, ko: "힐스파\n부산 해운대구 달맞이길117번길 11", to: "Hillspa" }),
+      S("hillspa", "21:10", { stay: "約 2 小時 30 分，00:00 前離開" }),
+      L("taxi", "23:40", "Hillspa → 住宿", { mins: "約 10 分", fare: 6700, ko: HOME, to: "住宿" }),
+      E("23:55", "回到住宿", "行李收好，明天 10:15 退房", "home"),
     ], rain: [
       ["甘川洞", "改去南浦的「釜山近現代歷史館」（부산근현대역사관，室內、免費），或直接去西面樂天百貨、西面地下街。"],
       ["松島纜車", "小雨照開，強風會停駛。停駛就在松島海灘旁的海景咖啡廳休息。"],
@@ -321,7 +322,7 @@ window.TRIP = (function () {
 
   const TICKETS = [
     { name: "SEA LIFE 水族館", when: "11/7", each: 32000, n: 4, pre: true, how: "線上買比現場便宜（價格以現場約 32,000 估算）" },
-    { name: "BIG5 釜山 PASS", when: "11/5–11/8", each: 65000, n: 4, pre: true, how: "Luge、SPA LAND、釜山塔、纜車、Hillspa 或龍宮雲橋" },
+    { name: "BIG5 釜山 PASS", when: "11/5–11/8", each: 65000, n: 4, pre: true, how: "Luge、SPA LAND、釜山塔、纜車、Hillspa" },
     { name: "天空膠囊列車（已訂）", when: "11/5", each: 60000, n: 1, pre: true, how: "4 人一車廂；10:00 尾浦 → 青沙浦" },
     { name: "松島龍宮雲橋", when: "11/8", each: 1000, n: 4, pre: false, how: "帶現金" },
   ];
